@@ -23,12 +23,15 @@ const AddMovie = () =>{
     const updateMovies = () => {
         console.log('Movies =>',movies);
         const movie = {
-            id: movies.length,
+            id: movies.length+1,
             name:name,
             price:price
         }
-        movies.push(movie)
-        setMovies(movies)
+        const prevMovies = [...movies,movie];
+        setName('');
+        setPrice('');
+        setMovies(prevMovies);
+        //setMovies(prevMovies => [...movies,movie])
     }
 
     return(
